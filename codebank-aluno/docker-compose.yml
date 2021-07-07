@@ -12,6 +12,7 @@ services:
       - "host.docker.internal:172.17.0.1"
 
   db:
+    container_name: db_appbank
     image: postgres:9.4
     restart: always
     tty: true
@@ -26,6 +27,7 @@ services:
       - "host.docker.internal:172.17.0.1"
 
   pgadmin:
+    container_name: pgadmin_appbank
     image: dpage/pgadmin4
     tty: true
     environment:
@@ -37,3 +39,4 @@ services:
       - db
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
+
